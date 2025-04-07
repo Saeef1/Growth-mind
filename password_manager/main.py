@@ -26,5 +26,5 @@ if st.button("Generate Password"):
 
     st.write(f"Your password is: {password}")
 
-
+st.write("made by [Muhammad Saeef](https://github.com/Saeef1/Growth-mind/tree/main/password_manager)")
 
