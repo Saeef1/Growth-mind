@@ -54,3 +54,5 @@ to_unit = st.radio("To Unit", options=conversion_options[unit_type])
 if st.button("Convert"):
     result = convertor(value, from_unit, to_unit)
     st.write(f"Converted value is: `{result}`")
+
+st.write("Made by [M.Saeef]( https://github.com/Saeef1/Growth-mind/blob/main/unit_convertor/main.py )")
