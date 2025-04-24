@@ -14,7 +14,7 @@ failed_attempts = 0
 LOCKED = 60
 
 st.title("Secure Login System")
-
+st.sidebar.subheader("Made by Muhammad Saeef")
 if "authenticate_user" not in st.session_state:
     st.session_state["authenticate_user"] = None
     st.session_state["failed_attempts"] = 0
@@ -25,12 +25,12 @@ def load_data():
         try:
             with open(User_DATA_FILE, "r") as file:
                 content = file.read()
-                if not content.strip():  # If file is empty
+                if not content.strip():
                     return {}
                 return json.loads(content)
         except json.JSONDecodeError:
             st.warning("Error loading data. File may be corrupted. Initializing new data file.")
-            # Create a new empty data file
+            # Creating a new empty data file
             with open(User_DATA_FILE, "w") as file:
                 json.dump({}, file)
             return {}
@@ -57,7 +57,7 @@ def save_data(data):
         temp_file = User_DATA_FILE + ".tmp"
         with open(temp_file, "w") as file:
             json.dump(serializable_data, file)
-        # Atomic rename
+        
         os.replace(temp_file, User_DATA_FILE)
     except Exception as e:
         st.error(f"Error saving data: {str(e)}")
